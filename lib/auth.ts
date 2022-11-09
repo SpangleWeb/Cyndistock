@@ -1,0 +1,44 @@
+// helpers used to help with authentication
+import jwt from "jsonwebtoken";
+import { NextApiRequest, NextApiResponse } from "next";
+import prisma from "./prisma";
+
+export const validateRoute = (handler) => {
+  return async (req: NextApiRequest, res: NextApiResponse) => {
+    const { TRAX_ACCESS_TOKEN: token } = req.cookies;
+
+    if (token) {
+      let user;
+      try {
+        const { id } = jwt.verify(token, "hello");
+        user = await prisma.user.findUnique({
+          where: { id },
+          select: {
+            id: true,
+            email: true,
+            isAdmin: true,
+            firstName: true,
+            lastName: true,
+          },
+        });
+
+        if (!user) {
+          throw new Error("Not Valid User");
+        }
+      } catch (e) {
+        res.status(401);
+        res.json({ error: "Not Authorised" });
+        return;
+      }
+      return handler(req, res, user);
+    }
+
+    res.status(401);
+    res.json({ error: "Not Authorised" });
+  };
+};
+
+export const validateToken = (token) => {
+  const user = jwt.verify(token, "hello");
+  return user;
+};
