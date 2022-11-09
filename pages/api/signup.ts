@@ -16,6 +16,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           email,
           password: bcrypt.hashSync(password, salt),
           isAdmin: false,
+          firstName: "Mike",
+          lastName: "Hunt",
         },
       });
     } catch (e) {
