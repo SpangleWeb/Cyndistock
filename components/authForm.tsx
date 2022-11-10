@@ -10,7 +10,7 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
   return (
     <Flex
       width="100vw"
-      bgGradient="linear(to-l, #2998ff, #5643fa)"
+      // bgGradient="linear(to-l, #2998ff, #5643fa)"
       color="white"
       justifyContent="center"
       alignItems="center"
@@ -28,14 +28,12 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
           borderRadius="6px"
           width="400px"
           maxWidth="calc(100vw - 48px)"
-          // borderTop=" 8px solid #5643fa"
+          borderTop=" 8px solid #5643fa"
           boxShadow="0px 3px 9px rgba(0, 0, 0, 0.4)"
         >
           <Flex
             justify="center"
             align="center"
-            // height="100px"
-            // borderBottom="1px solid white"
             flexDirection="row"
             marginTop="-48px"
           >
