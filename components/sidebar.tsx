@@ -16,13 +16,13 @@ import { signout } from "../lib/mutations";
 
 const navMenu = [
   { name: "Home", icon: MdHome, route: "/" },
-  { name: "Search", icon: MdSearch, route: "/search" },
-  { name: "Your Library", icon: MdLibraryMusic, route: "/library" },
+  { name: "Search Stock", icon: MdSearch, route: "/search" },
+  { name: "Your Portfolio", icon: MdLibraryMusic, route: "/library" },
 ];
 
 const musicMenu = [
-  { name: "Create Playlist", icon: MdPlaylistAdd, route: "/" },
-  { name: "Favorites", icon: MdFavorite, route: "/favorites" },
+  { name: "Create Cyndi", icon: MdPlaylistAdd, route: "/" },
+  { name: "Watchlist", icon: MdFavorite, route: "/favorites" },
 ];
 
 const Sidebar = () => {
@@ -47,7 +47,12 @@ const Sidebar = () => {
     >
       <Box py="24px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="12px">
-          <NextImage src="/logo.svg" alt="trax logo" height={60} width="120" />
+          <NextImage
+            src="/cyndi_light.png"
+            alt="trax logo"
+            height={120}
+            width={120}
+          />
         </Box>
         <Box marginBottom="24px">
           <Button
@@ -55,7 +60,7 @@ const Sidebar = () => {
             isLoading={isLoading}
             onClick={handleOnClick}
           >
-            Button
+            Log Out
           </Button>
           <List spacing={2.4}>
             {navMenu.map((menu) => (
@@ -125,7 +130,7 @@ const Sidebar = () => {
                     passHref
                   >
                     <Flex alignItems="center">
-                      <Text color="white">{playlist.name}</Text>
+                      <Text color="white">hi</Text>
                     </Flex>
                   </NextLink>
                 </LinkBox>
