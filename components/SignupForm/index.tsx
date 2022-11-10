@@ -28,12 +28,12 @@ export const SignupForm = () => {
     <Box>
       <Text
         color="gray.800"
-        textAlign="center"
+        // textAlign="center"
         mb="24px"
         fontSize="1xl"
         fontWeight="500"
       >
-        Welcome to Cyndi Stock
+        Enter your details below to register with Cyndi Stock.
       </Text>
       <form onSubmit={handleSubmit}>
         <Box paddingBottom="24px">
@@ -95,7 +95,7 @@ export const SignupForm = () => {
               },
             }}
           >
-            Log in
+            Sign up
           </Button>
         </Box>
         <Box width="100%">

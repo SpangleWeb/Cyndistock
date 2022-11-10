@@ -23,15 +23,6 @@ export const SigninForm = () => {
 
   return (
     <Box>
-      <Text
-        color="gray.800"
-        textAlign="center"
-        mb="24px"
-        fontSize="3xl"
-        fontWeight="700"
-      >
-        Welcome Back!
-      </Text>
       <form onSubmit={handleSubmit}>
         <Box paddingBottom="24px">
           <Text color="gray.800" fontWeight="600">

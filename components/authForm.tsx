@@ -35,13 +35,14 @@ const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
             justify="center"
             align="center"
             flexDirection="row"
-            marginTop="-48px"
+            marginTop="-24px"
+            marginBottom="24px"
           >
             <NextImage
-              src="/cyndi_dark_logo.svg"
+              src="/dark_default.png"
               alt="site logo"
-              width={200}
-              height={200}
+              width={160}
+              height={160}
             />
           </Flex>
           {isSigninForm ? <SigninForm /> : <SignupForm />}
