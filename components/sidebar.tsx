@@ -48,8 +48,8 @@ const Sidebar = () => {
       <Box py="24px" height="100%">
         <Box width="120px" marginBottom="20px" paddingX="12px">
           <NextImage
-            src="/cyndi_light.png"
-            alt="trax logo"
+            src="/light_default.png"
+            alt="cyndi logo"
             height={120}
             width={120}
           />
