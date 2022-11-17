@@ -1,8 +1,14 @@
+import { Box } from "@chakra-ui/react";
 import { validateToken } from "../../lib/auth";
-import { getStockDetails } from "../../lib/mutations";
+import { getStockCandles } from "../../lib/mutations";
+import { StockCandleChart } from "../../components/StockCandleChart";
 
-const Playlist = ({ stockData }) => {
-  return <div>Current Stock Price ${stockData.c}</div>;
+const Playlist = ({ stockCandle, stockName }) => {
+  return (
+    <Box>
+      <StockCandleChart candleData={stockCandle} stockName={stockName} />
+    </Box>
+  );
 };
 
 export const getServerSideProps = async ({ query, req }) => {
@@ -32,12 +38,10 @@ export const getServerSideProps = async ({ query, req }) => {
     };
   }
 
-  const result = await getStockDetails({ stockName });
-
-  const stockData = result?.response?.data;
+  const stockCandle = await getStockCandles({ stockName });
 
   return {
-    props: { stockData },
+    props: { stockCandle, stockName },
   };
 };
 

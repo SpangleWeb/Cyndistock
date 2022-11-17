@@ -159,7 +159,7 @@ export const Sidebar: FC<Props> = ({ user }) => {
 
   return (
     <Flex
-      bgGradient="radial(#FFFFFF, gray.200)"
+      background="gray.200"
       width="350px"
       maxWidth="30%"
       height={sidebarHeight}
@@ -202,12 +202,16 @@ export const Sidebar: FC<Props> = ({ user }) => {
                   }}
                   passHref
                 >
-                  <Card backgroundColor="#FFFFFF" size="sm">
+                  <Card size="sm" backgroundColor="#FFFFFF">
                     <CardHeader>
                       <Heading size="sm">{stock.name}</Heading>
                     </CardHeader>
                     <CardBody>
-                      <Text>Current: ${`${stock.c}`}</Text>
+                      <Flex width="100%">
+                        <Text>Current</Text>
+                        <Text color="green.600">$</Text>
+                        <Text color="green.600">{`${stock.c}`}</Text>
+                      </Flex>
                     </CardBody>
                   </Card>
                 </NextLink>
