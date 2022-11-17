@@ -1,20 +1,15 @@
 // eslint-disable-next-line prettier/prettier
-import prisma from "../lib/prisma";
-import { TestComponent } from "../components/testComponent";
-// import { useMe } from "../lib/hooks";
+// import prisma from "../lib/prisma";
+import React from "react";
+import { Flex, Text } from "@chakra-ui/react";
 
-const Home = ({ artists }) => {
-  // const { user } = useMe();
-  // console.log("hello", artists);
-  return <TestComponent data={artists} />;
-};
-
-export const getServerSideProps = async () => {
-  const artists = await prisma.artist.findMany({});
-
-  return {
-    props: { artists },
-  };
+// This is the home screen body content
+const Home = () => {
+  return (
+    <Flex>
+      <Text>Home Body</Text>
+    </Flex>
+  );
 };
 
 export default Home;

@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           email: user.email,
           time: Date.now(),
         },
-        "hello",
+        process.env.REACT_APP_SALT,
         { expiresIn: "8h" }
       );
 
