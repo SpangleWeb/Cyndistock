@@ -1,3 +1,4 @@
+import axios from "axios";
 import fetcher from "./fetcher";
 
 export const auth = (
@@ -22,4 +23,14 @@ export const signupAuth = (body: {
   password: string;
 }) => {
   return fetcher(`/signup`, body);
+};
+
+export const getStockDetails = async (body: { stockName: string }) => {
+  const finhubRequestKey = process.env.NEXT_PUBLIC_FINHUB_API_KEY;
+
+  const response = await axios.get(
+    `https://finnhub.io/api/v1/quote?symbol=${body.stockName}&token=${finhubRequestKey}`
+  );
+
+  return { response };
 };

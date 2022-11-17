@@ -32,7 +32,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         id: user.id,
         time: Date.now(),
       },
-      "hello",
+      process.env.REACT_APP_SALT,
       { expiresIn: "8h" }
     );
 

@@ -37,6 +37,16 @@ const run = async () => {
     },
   });
 
+  await prisma.userDetails.create({
+    data: {
+      stockList: ["APPL", "MSFT", "TSLA", "FB", "BABA", "UBER", "DIS", "SBUX"],
+      favouriteStock: "TSLA",
+      user: {
+        connect: { id: user.id },
+      },
+    },
+  });
+
   const songs = await prisma.song.findMany({});
 
   await Promise.all(

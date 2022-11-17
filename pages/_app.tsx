@@ -1,7 +1,7 @@
 import { FC } from "react";
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import PlayerLayout from "../components/playerLayout";
+import { SiteLayout } from "../components/BaseLayout/SiteLayout";
 import { Page } from "../types/page";
 // reset css to be the same in every browser
 import "reset-css";
@@ -46,9 +46,9 @@ const App: FC<Props> = ({ Component, pageProps }) => {
       {isAuthPage ? (
         <Component {...pageProps} />
       ) : (
-        <PlayerLayout>
+        <SiteLayout>
           <Component {...pageProps} />
-        </PlayerLayout>
+        </SiteLayout>
       )}
     </ChakraProvider>
   );
