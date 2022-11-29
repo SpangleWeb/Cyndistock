@@ -39,10 +39,29 @@ const run = async () => {
 
   await prisma.userDetails.create({
     data: {
-      stockList: ["APPL", "MSFT", "TSLA", "FB", "BABA", "UBER", "DIS", "SBUX"],
+      stockList: [
+        "AAPL",
+        "MSFT",
+        "TSLA",
+        "META",
+        "BABA",
+        "UBER",
+        "DIS",
+        "SBUX",
+      ],
       favouriteStock: "TSLA",
       user: {
         connect: { id: user.id },
+      },
+    },
+  });
+
+  await prisma.cyndiGroup.create({
+    data: {
+      name: "Look Mum No Hands",
+      watchList: ["META", "UBER", "TSLA"],
+      users: {
+        connect: [{ id: user.id }],
       },
     },
   });

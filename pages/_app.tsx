@@ -41,9 +41,10 @@ type Props = AppProps & {
 
 const App: FC<Props> = ({ Component, pageProps }) => {
   const isAuthPage = !!Component.authPage;
+  const isHomePage = !!Component.homePage;
   return (
     <ChakraProvider theme={theme}>
-      {isAuthPage ? (
+      {isAuthPage || isHomePage ? (
         <Component {...pageProps} />
       ) : (
         <SiteLayout>
