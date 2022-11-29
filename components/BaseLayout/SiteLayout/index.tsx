@@ -16,6 +16,8 @@ export const SiteLayout = ({ children }) => {
     ? "calc(100vh - 65px)"
     : "calc(100vh - 80px)";
 
+  console.log(JSON.stringify(user));
+
   return (
     <Box width="100vw" height="100vh">
       <Navbar user={user} />

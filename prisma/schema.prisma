@@ -21,6 +21,7 @@ model User {
   firstName   String
   lastName    String
   userDetails UserDetails?
+  cyndiGroup  CyndiGroup[]
 }
 
 model Song {
@@ -61,4 +62,11 @@ model UserDetails {
   userId         Int      @unique
   stockList      String[]
   favouriteStock String
+}
+
+model CyndiGroup {
+  id        Int      @id @default(autoincrement())
+  name      String
+  watchList String[]
+  users     User[]
 }

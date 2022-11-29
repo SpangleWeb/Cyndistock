@@ -19,6 +19,7 @@ export const validateRoute = (handler) => {
             isAdmin: true,
             firstName: true,
             lastName: true,
+            cyndiGroup: true,
           },
         });
 
